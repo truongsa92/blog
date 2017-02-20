@@ -5,9 +5,10 @@
 <div id="content">
 	<h1> Truong Sa </h1>
 
-	<?php echo $a; ?>
+	{{ isset($a) ? $a : '' }}
 
 	@yield('NoiDung')
+	
 <div>
 
 @include('layouts.footer')

@@ -95,6 +95,64 @@ Route::get('blade2', function() {
 
 Route::get('BladeTemplate/{a}', 'MyController@blade');
 
+//Database
+Route::get('database', function(){
+	Schema::create('loaisanpham', function($table){
+		$table->increments('id');
+		$table->string('ten', 200);
+	});
+	echo "Da thuc hien lenh tao bang";
+});
+Route::get('lienketbang', function() {
+	Schema::create('sanpham', function($table) {
+		$table->increments('id');
+		$table->string('ten');
+		$table->float('gia');
+		$table->integer('soluong')->default(0);
+		$table->integer('id_loaisanpham')->unsigned();
+		$table->foreign('id_loaisanpham')->references('id')->on('loaisanpham');
+	});
+	echo "Da tao bang sang pham";
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
